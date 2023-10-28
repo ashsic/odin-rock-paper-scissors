@@ -9,12 +9,12 @@ function getComputerChoice(){
     }
 }
 
-function getPlayerChoice(){
-    let playerChoice = prompt("Enter your choice of Rock, Paper, or Scissors: ");
-    playerChoice = playerChoice.toLowerCase();
-    return playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1);
-
-}
+// player input using prompt
+// function getPlayerChoice(){
+//     let playerChoice = prompt("Enter your choice of Rock, Paper, or Scissors: ");
+//     playerChoice = playerChoice.toLowerCase();
+//     return playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1);
+// }
 
 
 
