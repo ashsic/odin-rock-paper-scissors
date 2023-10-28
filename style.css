@@ -1,0 +1,69 @@
+/* Stylesheet */
+
+/* Universal/multiple section styles */
+
+body{
+    background-color: black;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+* {
+    color: #233142;
+    border: 1px solid #f95959
+}
+
+header, footer > *, main > *{
+    max-width: 1200px;
+    flex: 1;
+}
+
+#header-container, #footer-container, main{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Header/nav styles */
+#header-container{
+
+    background-color: #455d7a;
+
+}
+
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+ul{
+    display: flex;
+    gap: 24px;
+    list-style-type: none;
+}
+
+
+
+/* Main section styles */
+main {
+    background-color: #e3e3e3;
+    margin: 0;
+    flex: 1;
+}
+
+
+
+/* footer styles */
+#footer-container{
+    margin-top: auto;
+    background-color: #e3e3e3;
+    margin: 0;
+}
+
+
