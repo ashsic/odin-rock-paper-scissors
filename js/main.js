@@ -23,7 +23,6 @@ function handleClick(event){
     keepScore();
 };
 
-
 let playerSelection = false;
 let buttonsList = document.querySelectorAll("button");
 let playerScore = 0;
@@ -35,19 +34,23 @@ buttonsList.forEach(function(button){
     button.addEventListener("click", handleClick);
 });
 
-
-
 function playRound(playerSelection, computerSelection){
     function handleWin(){
         console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+        let roundResult = document.querySelector("#round-result");
+        roundResult.textContent = `You win the round! ${playerSelection} beats ${computerSelection}`;
         playerScore += 1;
     }
     function handleLoss(){
         console.log(`You lose. ${computerSelection} beats ${playerSelection}`);
+        let roundResult = document.querySelector("#round-result");
+        roundResult.textContent = `You lose the round. ${computerSelection} beats ${playerSelection}`;
         computerScore += 1;
     }
     function handleTie(){
         console.log(`Its a tie! You both picked ${computerSelection}`);
+        let roundResult = document.querySelector("#round-result");
+        roundResult.textContent = `This round ends in a draw.`;
     }
     if (playerSelection == "Rock"){
         if (computerSelection == "Rock") handleTie();
@@ -64,10 +67,9 @@ function playRound(playerSelection, computerSelection){
     }
     console.log("Current score: ")
     console.log(`player: ${playerScore}, computer: ${computerScore}`);
+    document.querySelector("#player-score").textContent = `${playerScore}`;
+    document.querySelector("#computer-score").textContent = `${computerScore}`;
 }
-
-
-
 
 function keepScore(){
     if (playerScore >= 5 || computerScore >= 5){
@@ -75,12 +77,17 @@ function keepScore(){
         console.log(`player: ${playerScore}, computer: ${computerScore}`);
         if (playerScore > computerScore){
             console.log("You won! Great job.");
+            let roundResult = document.querySelector("#round-result");
+            roundResult.textContent = `You win the game!`;
         }else{
             console.log("Better luck next time!");
+            let roundResult = document.querySelector("#round-result");
+            roundResult.textContent = `You lose the game.`;
         }
         for (button of buttonsList){
             button.removeEventListener("click", handleClick);
         }
+        document.querySelector("#curr-score").textContent = "Final Score:";
     }
 }
 // if (playerScore >= 5 || computerScore >= 5){
